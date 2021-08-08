@@ -125,7 +125,7 @@ class AddressBook {
 
 {
     try{
-        let contact = new AddressBook("Vagdevi", "Dhulipala", "TechCity", "vijag", "Telangana", "542004", "9812287593", "vagdevi52@gmail.com");
+        let contact = new AddressBook("Lalitha", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "lalitha9@gmail.com");
     }catch (error) {
         console.error(error);
     }
@@ -133,8 +133,8 @@ class AddressBook {
 
 {
     let AddressBookArray = new Array() ;
-    AddressBookArray.push(new AddressBook("Vagdevi", "Dhulipala", "Kukatpally", "Hyderabad", "Telangana", "524894", "8596486541", "vagdevi52@gmail.com"));
-    AddressBookArray.push(new AddressBook("Lalitha", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "lalitha@gmail.com"));
+    AddressBookArray.push(new AddressBook("Vagdevi", "Dhulipala", "vijag", "Hyderabad", "Telangana", "524894", "8596486541", "vagdevi52@gmail.com"));
+    AddressBookArray.push(new AddressBook("Lalitha", "Chowdary", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "lalitha9@gmail.com"));
     AddressBookArray.push(new AddressBook("Swathi", "Chowdary", "JublieeHills", "Hyderabad", "Telangana", "561004", "9854280202", "swathi11@gmail.com"));
     
     AddressBookArray.find(contact => contact.firstName == 'Vagdevi').firstName = 'Vagdevi';
@@ -149,7 +149,7 @@ class AddressBook {
     }
     //DuplicateEntry
     {
-        let newContact = new AddressBook("Vagdevi", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "vagdevi52@gmail.com") ;
+        let newContact = new AddressBook("Lalitha", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "vagdevi52@gmail.com") ;
         if  (       AddressBookArray.filter(contact =>  
                     contact.firstName == newContact.firstName && 
                     contact.lastName == newContact.lastName &&
@@ -184,5 +184,14 @@ class AddressBook {
         let givenCity = 'Hyderabad';
         let countByCity = AddressBookArray.filter(contact => contact.city == givenCity ).reduce((acc,val) => acc+1,0);
         console.log('Count by City ' + givenCity + ' is : ' + countByCity);
+    }
+    //sorting by alphabetically
+    const prompt = require('prompt-sync')();
+    console.log("Do You Want to Sort the Contacts:  \n1. YES \n2. NO")
+    let inputSort = parseInt(prompt("Enter your choice:  "))
+    if(inputSort == 1){
+    AddressBookArray.sort();
+    for(let i = 0; i < AddressBookArray.length; i++)
+        console.log(AddressBookArray[i].toString())
     }
 }    
