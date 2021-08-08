@@ -125,7 +125,7 @@ class AddressBook {
 
 {
     try{
-        let contact = new AddressBook("vagdevi", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "vagdevi52@gmail.com");
+        let contact = new AddressBook("Vagdevi", "Dhulipala", "TechCity", "vijag", "visakapatnam", "542004", "9812287593", "vagdevi9@gmail.com");
     }catch (error) {
         console.error(error);
     }
@@ -133,9 +133,9 @@ class AddressBook {
 
 {
     let AddressBookArray = new Array() ;
-    AddressBookArray.push(new AddressBook("Vagdevi", "Dhulipala", "vijag", "visakaptnam", "andhrapradesh", "55345", "8596486541", "vagdevi52@gmail.com"));
-    AddressBookArray.push(new AddressBook("Vagdevi", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "lalitha9@gmail.com"));
-    AddressBookArray.push(new AddressBook("Swathi", "Chowdary", "JublieeHills", "Hyderabad", "Telangana", "561004", "9854280202", "swathi1@gmail.com"));
+    AddressBookArray.push(new AddressBook("Vagdevi", "Dhulipala", "Kukatpally", "Hyderabad", "Telangana", "524894", "8596486541", "vagdevi52@gmail.com"));
+    AddressBookArray.push(new AddressBook("Lalitha", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "lalitha9@gmail.com"));
+    AddressBookArray.push(new AddressBook("Swathi", "Chowdary", "JublieeHills", "Hyderabad", "Telangana", "561004", "9854280202", "swathi11@gmail.com"));
     
     AddressBookArray.find(contact => contact.firstName == 'vagdevi').firstName = 'vagdevi';
       //DeleteContact
@@ -149,7 +149,7 @@ class AddressBook {
     }
     //DuplicateEntry
     {
-        let newContact = new AddressBook("vagdevi", "Dhulipala", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "vagdevi52@gmail.com") ;
+        let newContact = new AddressBook("Dinesh", "Chowdary", "TechCity", "Hyderabad", "Telangana", "542004", "9812287593", "dinesh9@gmail.com") ;
         if  (       AddressBookArray.filter(contact =>  
                     contact.firstName == newContact.firstName && 
                     contact.lastName == newContact.lastName &&
@@ -170,7 +170,13 @@ class AddressBook {
     //searchperson
     {
         let givenCity = 'Hyderabad';
-        let searchPersonInCityOrState = AddressBookArray.filter(contact => contact.firstName == 'Nethaji' && contact.city == givenCity );
+        let searchPersonInCityOrState = AddressBookArray.filter(contact => contact.firstName == 'Vagdevi' && contact.city == givenCity );
         console.log(searchPersonInCityOrState.toString());                                    
     }
-}    
+    //viewperson
+    {
+        let givenCity = 'Hyderabad';
+        let searchPersonInCityOrState = AddressBookArray.filter(contact => contact.city == givenCity );
+        console.log(searchPersonInCityOrState.toString());
+    }
+}     
